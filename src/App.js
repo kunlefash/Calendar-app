@@ -1,9 +1,7 @@
 import React from 'react';
-import Calendar from './components/Calendar';
 import './main.scss';
 import Button from 'react-bootstrap/Button';
 import { Row, Navbar, Container, Col, ListGroup } from 'react-bootstrap';
-import Modal from './components/EventModal';
 import * as moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 
