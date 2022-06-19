@@ -125,7 +125,7 @@ class App extends React.Component {
             <Col md={12}>
               <Navbar expand="lg" variant="light" bg="light">
                 <Container>
-                  <Navbar.Brand href="#"><h1>eCalendar</h1></Navbar.Brand>
+                  <Navbar.Brand href="#"><h1>Calendar App</h1></Navbar.Brand>
                 </Container>
               </Navbar>
             </Col>
