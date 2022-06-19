@@ -2,6 +2,8 @@ import React from 'react';
 import './main.scss';
 import Button from 'react-bootstrap/Button';
 import { Row, Navbar, Container, Col, ListGroup } from 'react-bootstrap';
+import Calendar from './components/calendar';
+import Events from './components/events';
 import * as moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -145,7 +147,7 @@ class App extends React.Component {
                 }
               </ListGroup>
               <Button className="add-btn" onClick={this.handleShow}>Add</Button>
-              <Modal deleteEvent={this.deleteEvent} updateEvent={this.updateEvent} event={this.state.loadEvent} show={this.state.show} handleClose={this.handleClose} addEvent={this.addEvent} />
+              <Events deleteEvent={this.deleteEvent} updateEvent={this.updateEvent} event={this.state.loadEvent} show={this.state.show} handleClose={this.handleClose} addEvent={this.addEvent} />
             </Col>
           </Row>
         </Container>
