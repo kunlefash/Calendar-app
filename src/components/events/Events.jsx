@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as yup from 'yup';
 import './events.scss';
 

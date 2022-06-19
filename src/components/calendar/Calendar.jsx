@@ -1,7 +1,7 @@
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction";
-import './calendar.css';
+import './calendar.scss';
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'

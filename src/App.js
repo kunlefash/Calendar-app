@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Row, Navbar, Container, Col, ListGroup } from 'react-bootstrap';
 import Calendar from './components/calendar';
 import Events from './components/events';
-import * as moment from 'moment';
+import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 
 class App extends React.Component {
