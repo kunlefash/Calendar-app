@@ -1,7 +1,7 @@
 import React from 'react';
 import './main.scss';
 import Button from 'react-bootstrap/Button';
-import { Row, Navbar, Container, Col, ListGroup } from 'react-bootstrap';
+import { Row, Navbar, Container, Col, ListGroup, Form } from 'react-bootstrap';
 import Calendar from './components/calendar';
 import Events from './components/events';
 import moment from 'moment';
@@ -14,7 +14,6 @@ class App extends React.Component {
     // there is a bug with getting current data according to the timezone
     this.state = {
       date: new Date(new Date().toLocaleDateString()),
-      //add some sample data if there is nothing saved in localStorage
       events: localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [],
       today: [],
       loadEvent: {},
@@ -143,7 +142,11 @@ class App extends React.Component {
                 {this.state.today.length ? this.state.today.map((event, i) => <ListGroup.Item key={i}>
                   <b>{event.start} </b> - {event.title}
                 </ListGroup.Item>)
-                  : <ListGroup.Item>No Appoinments</ListGroup.Item>
+                  : 
+                  <Form.Group className="mb-3">
+                    <Form.Label>Appointments</Form.Label>
+                    <Form.Control type="text" placeholder="Enter appointments" />
+                  </Form.Group>
                 }
               </ListGroup>
               <Button className="add-btn" onClick={this.handleShow}>Add</Button>
