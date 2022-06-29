@@ -8,10 +8,9 @@ import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
-    // there is a bug with getting current data according to the timezone
+    // Fix timezone bug
     this.state = {
       date: new Date(new Date().toLocaleDateString()),
       events: localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [],
@@ -23,7 +22,6 @@ class App extends React.Component {
   componentDidMount() {
     this.getEvents(moment(new Date()).format('YYYY-MM-DD'));
   }
-  //*************** Helper Functions **************/
   getTime = date => {
     return moment(date).format("hh:mm");
   }
@@ -33,9 +31,8 @@ class App extends React.Component {
   saveStateToLocalStorage = () => {
     localStorage.setItem('events', JSON.stringify(this.state.events));
   }
-  //*************************************************/
 
-  // update the state with the new event and make a copy of state to local storage for persistent data usage
+  // updates the state with the new event and make a copy of state to local storage for persistent data usage
   addEvent = (event) => {
     event.id = uuidv4();
     this.setState(({ events }) => ({
@@ -55,14 +52,14 @@ class App extends React.Component {
   }
   updateEvent = (event) => {
     const eventId = this.state.loadEvent.id
-    //remove the old event from the state
+    //removes the old event from the state
     event.id = eventId;
     this.deleteEvent(event);
     //keep the previous Id and add the event
     this.addEvent(event);
   }
 
-  //add the prev
+  //adds the prev
   prepareEventUpdate = event => {
     // filter the event that is being clicked by using it's id
     const currentEvent = this.state.events.filter(e => e.id === event.id)[0];

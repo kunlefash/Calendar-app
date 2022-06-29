@@ -2,10 +2,8 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction";
 import './calendar.scss';
-
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-/* A class component that is using the props that are passed in from the parent component. */
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Calendar extends Component {
     static propTypes = {
@@ -14,7 +12,7 @@ class Calendar extends Component {
     calendarComponentRef = React.createRef();
 
     handleDateClick = (arg) => {
-        //Get all the events for the date that was clicked
+        //Gets all the events for the date that was clicked
         this.props.changeDate(arg.dateStr);
     }
     
@@ -23,7 +21,7 @@ class Calendar extends Component {
             <div className="calendar-container">
                 <FullCalendar
                     dateClick={this.handleDateClick}
-                    //get the event that is about to be updated
+                    //gets the event that is about to be updated
                     eventClick={({ event }) => this.props.updateEvent(event)}
                     defaultView="dayGridMonth"
                     ref={this.calendarComponentRef}
