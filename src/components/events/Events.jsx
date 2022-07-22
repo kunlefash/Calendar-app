@@ -4,6 +4,7 @@ import moment from 'moment';
 import * as yup from 'yup';
 import './events.scss';
 
+// Using yup for form validation
 let schema = yup.object().shape({
     title: yup.string().trim('The title cannot include leading and trailing spaces').strict(true).required('Title is required'),
     start: yup.date().required(),

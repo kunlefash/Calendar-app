@@ -86,11 +86,12 @@ class App extends React.Component {
         events.push({ title: event.title, start });
       }
     })
-    // sort events in order according to the time of the day ASC
+    // sort events in order according to the time of the day in ascending order
     this.setState({
       today: events.sort((a, b) => a.start > b.start)
     })
   }
+  // Sets date format
   changeDate = (date) => {
     this.setState({
       date: new Date(date + 'T00:00:00'),
