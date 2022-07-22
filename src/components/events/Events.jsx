@@ -96,7 +96,7 @@ class EventModal extends Component {
             });
     }
     closeModal = () => {
-        //reset state before closing
+        //reset state before closing 
         this.setState({
             event: {
                 title: "",
