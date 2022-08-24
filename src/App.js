@@ -86,7 +86,6 @@ class App extends React.Component {
         events.push({ title: event.title, start });
       }
     })
-    // sort events in order according to the time of the day in ascending order
     this.setState({
       today: events.sort((a, b) => a.start > b.start)
     })
@@ -143,11 +142,11 @@ class App extends React.Component {
                   : 
                   <Form.Group className="mb-3">
                     <Form.Label>Appointments</Form.Label>
-                    <Form.Control type="text" placeholder="Enter appointments" />
+                    <Form.Control type="text" placeholder="Enter your appointments" />
                   </Form.Group>
                 }
               </ListGroup>
-              <Button className="add-btn" onClick={this.handleShow}>Add</Button>
+              <Button className="add-btn" onClick={this.handleShow}>Add Event</Button>
               <Events deleteEvent={this.deleteEvent} updateEvent={this.updateEvent} event={this.state.loadEvent} show={this.state.show} handleClose={this.handleClose} addEvent={this.addEvent} />
             </Col>
           </Row>
